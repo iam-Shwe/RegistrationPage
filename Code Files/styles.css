@@ -1,0 +1,131 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Allow scrolling */
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background: linear-gradient(to top right, #ffe8e8, #e2f0fc, #f8e9fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 232, 232, 0.5), rgba(226, 240, 252, 0.5), rgba(248, 233, 254, 0.5));
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1; /* Ensure it is behind the container */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.registration-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: relative; /* For stacking context */
+    z-index: 1; /* Ensure it is above the animated background */
+}
+
+.form-header h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    transition: border-color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control:focus {
+    border-color: #56cfe1;
+    box-shadow: none;
+}
+
+#dob {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-btn {
+    background-color: #56cfe1;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+    background-color: #64dfdf;
+}
+
+@media (max-width: 767px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    #dob {
+        width: 100%;
+    }
+}
+
+.input-group .input-group-text {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+}
+
+.input-group .form-control {
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+}
+
+.form-image img {
+    border-radius: 50%;
+    border: 2px solid #56cfe1;
+}
